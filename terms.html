@@ -4,126 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service — NeuraMove</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
-<body>
-<div class="page-bg">
-
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <a href="index.html" style="display:flex;align-items:center;gap:.75rem;">
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png" alt="NeuraMove" />
-          <span>NeuraMove</span>
+<body class="bg-slate-950 text-white min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png" alt="NeuraMove" class="h-10 w-10" />
+          <span class="text-xl font-bold">NeuraMove</span>
         </a>
-      </div>
-      <div class="nav-links">
-        <a href="index.html" class="btn btn-outline">← Home</a>
+        <a href="index.html" class="border border-slate-700 hover:bg-slate-800 text-white font-medium px-4 py-2 rounded-lg transition-colors">← Home</a>
       </div>
     </div>
   </nav>
 
-  <div class="legal-hero" style="max-width:800px;margin:0 auto;">
-    <a href="index.html" class="legal-back">← Back</a>
-    <h1 style="font-size:2rem;font-weight:700;margin-bottom:.25rem;">Terms of Service</h1>
-    <p class="text-muted" id="date"></p>
-  </div>
+  <div class="max-w-4xl mx-auto px-6 pt-28 pb-20">
+    <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-6 text-sm">← Back</a>
+    <h1 class="text-3xl font-bold mb-1">Terms of Service</h1>
+    <p class="text-slate-400 mb-10" id="date"></p>
 
-  <div class="legal-card">
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing and using NeuraMove ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these Terms of Service, please do not use the Service.</p>
+    <div class="bg-slate-800/30 border border-slate-700 rounded-2xl p-8 space-y-8">
 
-    <h2>2. Description of Service</h2>
-    <p>NeuraMove is a business intelligence and analytics tool designed to help independent delivery drivers and gig workers track their earnings, expenses, and performance metrics. The Service provides informational analysis and data visualization based on data you provide.</p>
+      <div><h2 class="text-xl font-bold text-white mb-3">1. Acceptance of Terms</h2>
+        <p class="text-slate-400">By accessing and using NeuraMove ("the Service"), you accept and agree to be bound by these terms. If you do not agree, please do not use the Service.</p>
+      </div>
 
-    <h2>3. Informational Purposes Only</h2>
-    <div class="warning-box">
-      <strong>IMPORTANT DISCLAIMER:</strong> NeuraMove is provided for informational and analytical purposes only. The Service does NOT provide tax advice, financial advice, professional recommendations, or legal advice.
-    </div>
-    <ul>
-      <li><strong>Tax Advice:</strong> The expense tracking and net earnings calculations are NOT tax advice. Consult a qualified tax professional for tax-related decisions.</li>
-      <li><strong>Financial Advice:</strong> The analytics and insights are NOT financial advice. Consult a licensed financial advisor for financial planning.</li>
-      <li><strong>Professional Recommendations:</strong> Analytical estimates are based on your input data, NOT professional business advice.</li>
-      <li><strong>Legal Advice:</strong> Nothing in this Service constitutes legal advice about your work arrangements or relationships with platforms.</li>
-    </ul>
+      <div><h2 class="text-xl font-bold text-white mb-3">2. Description of Service</h2>
+        <p class="text-slate-400">NeuraMove is a business intelligence and analytics tool designed to help independent delivery drivers and gig workers track their earnings, expenses, and performance metrics.</p>
+      </div>
 
-    <h2>4. No Guarantees of Accuracy</h2>
-    <p>All calculations, statistics, predictions, and recommendations provided by NeuraMove are estimates based on the data you provide. We make no guarantees regarding:</p>
-    <ul>
-      <li>The accuracy of any calculations or projections</li>
-      <li>The correctness of zone statistics or follow-up probabilities</li>
-      <li>The outcomes of following any recommendations or insights</li>
-      <li>The completeness or reliability of any data analysis</li>
-    </ul>
-    <p><strong>You are solely responsible for verifying all data, calculations, and making your own independent decisions about your business operations.</strong></p>
+      <div><h2 class="text-xl font-bold text-white mb-3">3. Informational Purposes Only</h2>
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4 text-slate-300 mb-3"><strong>IMPORTANT:</strong> NeuraMove is provided for informational and analytical purposes only.</div>
+        <ul class="list-disc list-inside space-y-1 text-slate-400"><li><strong class="text-white">Tax Advice:</strong> NOT tax advice. Consult a qualified tax professional.</li><li><strong class="text-white">Financial Advice:</strong> NOT financial advice. Consult a licensed financial advisor.</li><li><strong class="text-white">Legal Advice:</strong> Nothing here constitutes legal advice.</li></ul>
+      </div>
 
-    <h2>5. User Responsibilities</h2>
-    <p>You agree to:</p>
-    <ul>
-      <li>Provide accurate and complete information</li>
-      <li>Use the Service in compliance with all applicable laws and platform terms of service</li>
-      <li>Make your own independent business decisions</li>
-      <li>Verify all calculations and data before relying on them</li>
-      <li>Consult appropriate professionals (tax advisors, accountants, lawyers) for professional advice</li>
-      <li>Not hold NeuraMove liable for any decisions you make based on the Service</li>
-    </ul>
+      <div><h2 class="text-xl font-bold text-white mb-3">4. No Guarantees of Accuracy</h2>
+        <p class="text-slate-400 mb-2">All calculations, statistics, predictions, and recommendations are estimates based on the data you provide. We make no guarantees regarding accuracy, correctness, or outcomes.</p>
+        <p class="font-semibold text-slate-300">You are solely responsible for verifying all data and making your own independent decisions.</p>
+      </div>
 
-    <h2>6. Limitation of Liability</h2>
-    <div class="danger-box">
-      TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEURAMOVE AND ITS OPERATORS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
-    </div>
-    <ul>
-      <li>Your use or inability to use the Service</li>
-      <li>Any decisions made based on Service data or recommendations</li>
-      <li>Any errors, inaccuracies, or omissions in the Service</li>
-      <li>Any tax, financial, or business consequences of using the Service</li>
-      <li>Any platform deactivations, income loss, or negative outcomes</li>
-    </ul>
+      <div><h2 class="text-xl font-bold text-white mb-3">5. User Responsibilities</h2>
+        <ul class="list-disc list-inside space-y-1 text-slate-400"><li>Provide accurate and complete information</li><li>Use the Service in compliance with all applicable laws</li><li>Make your own independent business decisions</li><li>Verify all calculations before relying on them</li><li>Consult professionals for tax, financial, and legal advice</li></ul>
+      </div>
 
-    <h2>7. Data Collection and Privacy</h2>
-    <p>Your use of the Service is also governed by our <a href="privacy.html" style="color:var(--primary);">Privacy Policy</a>. By using NeuraMove, you consent to the collection and use of your data as described in the Privacy Policy.</p>
+      <div><h2 class="text-xl font-bold text-white mb-3">6. Limitation of Liability</h2>
+        <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4 text-slate-300 font-semibold mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEURAMOVE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.</div>
+        <ul class="list-disc list-inside space-y-1 text-slate-400"><li>Your use or inability to use the Service</li><li>Any decisions made based on Service data</li><li>Any tax, financial, or business consequences</li><li>Any platform deactivations or income loss</li></ul>
+      </div>
 
-    <h2>8. Beta Software</h2>
-    <p>NeuraMove is currently in beta and under active development. Features may change, and the Service may contain bugs or inaccuracies. Use at your own risk.</p>
+      <div><h2 class="text-xl font-bold text-white mb-3">7. Beta Software</h2>
+        <p class="text-slate-400">NeuraMove is currently in beta and under active development. Features may change, and the Service may contain bugs or inaccuracies. Use at your own risk.</p>
+      </div>
 
-    <h2>9. No Endorsement</h2>
-    <p>NeuraMove is not affiliated with, endorsed by, or sponsored by any delivery platform (DoorDash, Uber, Lyft, Instacart, Skip the Dishes, or any other platform). All platform names and trademarks are the property of their respective owners.</p>
+      <div><h2 class="text-xl font-bold text-white mb-3">8. No Endorsement</h2>
+        <p class="text-slate-400">NeuraMove is not affiliated with, endorsed by, or sponsored by any delivery platform (DoorDash, Uber, Lyft, Instacart, Skip the Dishes, or any other platform).</p>
+      </div>
 
-    <h2>10. Modifications to Service</h2>
-    <p>We reserve the right to modify or discontinue the Service at any time, with or without notice. We shall not be liable to you or any third party for any modification, suspension, or discontinuance of the Service.</p>
+      <div><h2 class="text-xl font-bold text-white mb-3">9. Governing Law</h2>
+        <p class="text-slate-400">These Terms shall be governed by and construed in accordance with the laws of Canada.</p>
+      </div>
 
-    <h2>11. Modifications to Terms</h2>
-    <p>We reserve the right to modify these Terms of Service at any time. Continued use of the Service after changes constitutes acceptance of the modified terms.</p>
+      <div><h2 class="text-xl font-bold text-white mb-3">10. Contact</h2>
+        <p class="text-slate-400">For questions: <strong class="text-white">support@neuramove.ca</strong></p>
+      </div>
 
-    <h2>12. Governing Law</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of Canada, without regard to its conflict of law provisions.</p>
-
-    <h2>13. Contact</h2>
-    <p>For questions about these Terms of Service, please contact us at <strong>support@neuramove.ca</strong></p>
-
-    <div class="summary-box">
-      <p class="title">Summary (Not Legal Advice)</p>
-      <p class="body">NeuraMove is an informational tool, not a professional service. All calculations are estimates. You make your own business decisions. We're not liable for outcomes. Verify everything independently. Consult professionals for tax, financial, and legal advice.</p>
+      <div class="bg-slate-900/50 border border-slate-700 rounded-xl p-5">
+        <p class="font-semibold text-white mb-2">Summary (Not Legal Advice)</p>
+        <p class="text-sm text-slate-400">NeuraMove is an informational tool, not a professional service. All calculations are estimates. You make your own business decisions. We're not liable for outcomes. Consult professionals for tax, financial, and legal advice.</p>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/d8ce52d8-125b-46df-b51d-fe45464a6417.png" alt="NeuraMove" />
-        © 2026 NeuraMove. All rights reserved.
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="about.html">About</a>
-      </div>
+  <footer class="py-12 px-4 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3"><img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/d8ce52d8-125b-46df-b51d-fe45464a6417.png" alt="NeuraMove" class="h-6 w-6" /><span class="text-slate-400">© 2026 NeuraMove. All rights reserved.</span></div>
+      <div class="flex gap-6"><a href="index.html" class="text-slate-400 hover:text-white transition-colors">Home</a><a href="privacy.html" class="text-slate-400 hover:text-white transition-colors">Privacy</a></div>
     </div>
   </footer>
-
-</div>
-<script>document.getElementById('date').textContent = 'Last updated: ' + new Date().toLocaleDateString();</script>
+  <script>document.getElementById('date').textContent = 'Last updated: ' + new Date().toLocaleDateString();</script>
 </body>
 </html>
