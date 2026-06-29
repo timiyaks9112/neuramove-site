@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "neuramove-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "4567", "."],
+      "port": 4567
+    }
+  ]
+}
