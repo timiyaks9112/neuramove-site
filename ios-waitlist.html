@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iOS Waitlist — NeuraMove</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="page-bg">
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html" style="display:flex;align-items:center;gap:.75rem;">
+          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png" alt="NeuraMove" />
+          <span>NeuraMove</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <span class="badge">📱 Coming Soon to iOS</span>
+    <h1>Be First to Get <span class="gradient-text">NeuraMove for iOS</span></h1>
+    <p class="hero-sub" style="max-width:600px;margin:0 auto 2.5rem;">Join the waitlist for early access to the most powerful earnings tracker built specifically for gig workers. Get notified the moment we launch.</p>
+  </div>
+
+  <div style="max-width:800px;margin:0 auto;padding:0 1.5rem 5rem;">
+
+    <div class="features-3">
+      <div class="mini-card indigo">
+        <div class="mini-icon" style="background:rgba(79,70,229,0.1);">⚡</div>
+        <h3>Auto GPS Tracking</h3>
+        <p>Automatic mileage tracking with GPS — no more manual logging</p>
+      </div>
+      <div class="mini-card green">
+        <div class="mini-icon" style="background:rgba(16,185,129,0.1);">📈</div>
+        <h3>Platform Sync</h3>
+        <p>Direct integrations with Uber, DoorDash, Skip, and more</p>
+      </div>
+      <div class="mini-card amber">
+        <div class="mini-icon" style="background:rgba(245,158,11,0.1);">💰</div>
+        <h3>Real-Time Earnings</h3>
+        <p>See your true hourly rate and maximize your income instantly</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-card" id="form-wrap">
+      <div class="form-title">Join the iOS Waitlist</div>
+      <div class="form-sub">Get early access and exclusive launch benefits</div>
+
+      <form id="waitlist-form" onsubmit="submitWaitlist(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="full_name">Full Name *</label>
+            <input id="full_name" type="text" required placeholder="John Smith" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input id="email" type="email" required placeholder="john@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone_number">Phone Number (Optional)</label>
+          <input id="phone_number" type="tel" placeholder="+1 (555) 123-4567" />
+        </div>
+        <div class="form-group">
+          <label for="current_platforms">Which platforms do you currently use?</label>
+          <input id="current_platforms" type="text" placeholder="Uber, DoorDash, Skip, etc." />
+        </div>
+        <div class="form-group">
+          <label for="referral_source">How did you hear about NeuraMove?</label>
+          <input id="referral_source" type="text" placeholder="Friend, social media, search, etc." />
+        </div>
+        <div class="form-group">
+          <div class="checkbox-row">
+            <input id="has_existing_data" type="checkbox" />
+            <label for="has_existing_data" style="margin:0;cursor:pointer;">I have existing data from the web app that I want to migrate to iOS</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="notes">Anything else we should know? (Optional)</label>
+          <textarea id="notes" placeholder="Feature requests, questions, or feedback..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">Join the Waitlist</button>
+        <p class="form-note">We respect your privacy. Your information will only be used to notify you about the iOS app launch.</p>
+      </form>
+    </div>
+
+    <!-- Success -->
+    <div class="success-card" id="success-card">
+      <div class="success-icon">✓</div>
+      <h2>You're on the list! 🎉</h2>
+      <p>Thank you for joining the NeuraMove iOS waitlist. We'll notify you as soon as the app launches.</p>
+      <p>You'll receive an email with early access details and migration instructions.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <a href="https://twitter.com/intent/tweet?text=Just joined the @NeuraMove iOS waitlist! 🚀 The ultimate earnings tracker for gig workers." target="_blank" class="btn btn-outline">Share on Twitter</a>
+      </div>
+    </div>
+
+    <div class="social-proof">
+      <p>Join 500+ drivers already tracking with NeuraMove</p>
+      <div class="avatar-row">
+        <div class="avatar-circle"></div>
+        <div class="avatar-circle"></div>
+        <div class="avatar-circle"></div>
+        <div class="avatar-circle"></div>
+        <div class="avatar-circle"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/d8ce52d8-125b-46df-b51d-fe45464a6417.png" alt="NeuraMove" />
+        © 2026 NeuraMove. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOpLnL8VOBHjKkJFQeC5bW3CPP7CnTvgTPLLwqPgBvdoIvFRfHa7zRV8XGnzUPDexOrw/exec";
+
+async function submitWaitlist(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+
+  const data = {
+    full_name: document.getElementById('full_name').value,
+    email: document.getElementById('email').value,
+    phone_number: document.getElementById('phone_number').value,
+    current_platforms: document.getElementById('current_platforms').value,
+    referral_source: document.getElementById('referral_source').value,
+    has_existing_data: document.getElementById('has_existing_data').checked,
+    notes: document.getElementById('notes').value,
+    form: 'ios-waitlist'
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(err) { console.error(err); }
+
+  document.getElementById('form-wrap').style.display = 'none';
+  document.getElementById('success-card').style.display = 'block';
+}
+</script>
+</body>
+</html>
