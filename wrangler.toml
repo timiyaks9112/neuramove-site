@@ -1,5 +1,6 @@
 name = "neuramove-site"
 compatibility_date = "2024-01-01"
+preview_urls = false
 
 [assets]
-directory = "."
+directory = "site-public"
