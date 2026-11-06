@@ -1,318 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuraMove — Gig Work Records and Insights</title>
-  <link rel="icon" type="image/png" href="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png" />
-  <meta name="description" content="Record gig-work shifts, expenses, and mileage in one place. Review estimates based on the information you provide." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Inter', sans-serif; background: #080E1C; }
-    h1,h2,h3,h4,h5,h6 { font-family: 'Space Grotesk', sans-serif; }
-    nav span { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
-    .gradient-text { background: linear-gradient(135deg, #00D4AA, #8B7EFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .card-hover { transition: background 0.2s; }
-    .card-hover:hover { background: rgba(13,22,40,0.75); }
-    /* Backgrounds */
-    .bg-slate-950 { background-color: #080E1C !important; }
-    .bg-slate-900 { background-color: #0D1628 !important; }
-    .bg-slate-800 { background-color: #111E32 !important; }
-    .bg-slate-900\/80 { background-color: rgba(8,14,28,0.90) !important; }
-    .bg-slate-800\/50 { background-color: rgba(13,22,40,0.50) !important; }
-    .bg-slate-800\/30 { background-color: rgba(13,22,40,0.30) !important; }
-    .bg-slate-800\/40 { background-color: rgba(13,22,40,0.40) !important; }
-    .bg-slate-900\/50 { background-color: rgba(8,14,28,0.50) !important; }
-    /* Teal replaces indigo */
-    .bg-indigo-600 { background-color: #00D4AA !important; color: #080E1C !important; font-weight: 600; }
-    .hover\:bg-indigo-700:hover { background-color: #00EFC0 !important; color: #080E1C !important; }
-    .text-indigo-400, .text-indigo-500 { color: #00D4AA !important; }
-    .bg-indigo-500\/10 { background-color: rgba(0,212,170,0.10) !important; }
-    .bg-indigo-500\/20 { background-color: rgba(0,212,170,0.15) !important; }
-    .border-indigo-500\/20 { border-color: rgba(0,212,170,0.20) !important; }
-    .border-indigo-500\/30 { border-color: rgba(0,212,170,0.30) !important; }
-    .focus\:border-indigo-500:focus { border-color: #00D4AA !important; }
-    .accent-indigo-500 { accent-color: #00D4AA !important; }
-    /* Violet replaces emerald */
-    .text-emerald-400, .text-emerald-500 { color: #8B7EFF !important; }
-    .bg-emerald-500\/10 { background-color: rgba(139,126,255,0.12) !important; }
-    .bg-emerald-500\/5 { background-color: rgba(139,126,255,0.05) !important; }
-    .border-emerald-500\/20 { border-color: rgba(139,126,255,0.20) !important; }
-    .border-emerald-500\/30 { border-color: rgba(139,126,255,0.30) !important; }
-    /* Borders */
-    .border-slate-800 { border-color: rgba(255,255,255,0.07) !important; }
-    .border-slate-700 { border-color: rgba(255,255,255,0.10) !important; }
-    /* Amber stays as-is */
-    .bg-amber-500\/10 { background-color: rgba(245,166,35,0.10) !important; }
-    .border-amber-500\/20 { border-color: rgba(245,166,35,0.20) !important; }
-    /* Teal border on emerald-linked badges */
-    .border-emerald-500 { border-color: #8B7EFF !important; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="NeuraMove helps Canadian gig drivers keep shift, mileage, and expense records together. Apply to test the free iPhone beta.">
+  <title>NeuraMove — A clearer view of your driving work</title>
+  <link rel="icon" type="image/png" href="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="homepage.css">
 </head>
-<body class="bg-slate-950 text-white">
-
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center gap-3">
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png" alt="NeuraMove" class="h-10 w-10" />
-          <span class="text-xl font-bold">NeuraMove</span>
-        </div>
-        <div class="flex items-center gap-6">
-          <a href="about.html" class="text-slate-300 hover:text-white transition-colors font-medium hidden sm:block">About</a>
-          <a href="about.html" class="text-slate-300 hover:text-white transition-colors font-medium hidden sm:block">About</a>
-          <a href="ios-waitlist.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors">Join Beta</a>
-        </div>
-      </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="NeuraMove home"><img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/a3bfdccc-a1b1-415f-8709-8040201e4493.png" alt="" width="34" height="34"><span>NeuraMove</span></a>
+      <nav class="header-nav" aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#beta">The beta</a><a href="about.html">About</a></nav>
+      <a class="button button-small header-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdTKVXlsVni_qiqCwJmN641WQVE-rnu2V-TO7sWfkDx0zwVoQ/viewform">Apply for the beta <span aria-hidden="true">↗</span></a>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="pt-32 pb-16 px-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium border border-indigo-500/20 mb-6">Early iOS beta — seeking 20 test drivers</span>
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Understand your gig work with <span class="gradient-text">NeuraMove</span>
-          </h1>
-          <p class="text-xl text-slate-300 mb-8 leading-relaxed">Record shifts, expenses, and mileage in one place. Review trends and estimates based on the data you enter and track.</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTKVXlsVni_qiqCwJmN641WQVE-rnu2V-TO7sWfkDx0zwVoQ/viewform" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors">
-              Join the beta — apply here <span>→</span>
-            </a>
-            <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 border border-slate-700 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors">
-              ▶ See How It Works
-            </a>
-          </div>
-          <p class="text-sm text-slate-400">Free during beta. No credit card required.</p>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Early iPhone beta · Canada</p>
+          <h1 id="hero-heading">A clearer view of your driving work.</h1>
+          <p class="hero-lede">Your shifts happen across apps. Your mileage and costs add up along the way. NeuraMove brings the records together so you can see more of the story behind what you earned.</p>
+          <div class="hero-actions"><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdTKVXlsVni_qiqCwJmN641WQVE-rnu2V-TO7sWfkDx0zwVoQ/viewform">Apply for the beta <span aria-hidden="true">↗</span></a><a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a></div>
+          <p class="hero-note">Seeking 20 test drivers · Free during beta · No credit card required</p>
         </div>
-
-        <div class="relative">
-          <div class="relative mx-auto max-w-sm">
-            <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/1dff96ac-6133-4d38-8168-a47a81149416.png" alt="NeuraMove Dashboard" class="rounded-3xl shadow-2xl border-4 border-slate-800 w-full" />
-            <p class="text-center text-sm text-slate-400 mt-3">Illustrative app screen; values are examples.</p>
-          </div>
+        <div class="hero-art">
+          <div class="hero-art-label">Your work, in one place <span>01 / 03</span></div>
+          <img class="hero-screen" src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/1dff96ac-6133-4d38-8168-a47a81149416.png" alt="Illustrative NeuraMove dashboard showing example work records" width="420" height="600" fetchpriority="high">
+          <p class="art-caption">App preview · Sample values shown</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="py-10 px-4 bg-slate-900/30 border-y border-slate-800 text-center">
-    <p class="max-w-3xl mx-auto text-slate-300">NeuraMove is in beta. We are testing tracking reliability and improving the reports before a wider release.</p>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">How NeuraMove Works</h2>
-        <p class="text-xl text-slate-400">Three ways to organize your gig-work records</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-500/10 border-2 border-indigo-500 mb-6">
-            <span class="text-2xl font-bold text-indigo-400">1</span>
-          </div>
-          <h3 class="text-2xl font-semibold text-white mb-4">Log Your Shifts</h3>
-          <p class="text-slate-400 mb-6">Enter shift hours and earnings for the platforms you use. Manual logging remains available when automatic data is missing.</p>
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/1dff96ac-6133-4d38-8168-a47a81149416.png" alt="Log shifts easily" class="rounded-2xl shadow-xl border-2 border-slate-800 mx-auto max-w-xs w-full" />
-        </div>
-        <div class="text-center">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/10 border-2 border-emerald-500 mb-6">
-            <span class="text-2xl font-bold text-emerald-400">2</span>
-          </div>
-          <h3 class="text-2xl font-semibold text-white mb-4">Track Everything</h3>
-          <p class="text-slate-400 mb-6">Review estimated hourly rates and trends from the work records you enter and track. Record expenses and mileage for tax time.</p>
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/de78f996-fa57-47f0-bf21-be199b3d8029.png" alt="Analytics dashboard" class="rounded-2xl shadow-xl border-2 border-slate-800 mx-auto max-w-xs w-full" />
-        </div>
-        <div class="text-center">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-500/10 border-2 border-amber-500 mb-6">
-            <span class="text-2xl font-bold text-amber-400">3</span>
-          </div>
-          <h3 class="text-2xl font-semibold text-white mb-4">Review Your Records</h3>
-          <p class="text-slate-400 mb-6">Look for patterns in recorded hours, earnings, expenses, and mileage. Results depend on the completeness of your records.</p>
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/1becc2d7-c042-4846-8815-0273a1d629ac.png" alt="Smart insights" class="rounded-2xl shadow-xl border-2 border-slate-800 mx-auto max-w-xs w-full" />
+    </section>
+    <section class="intro-band" aria-label="NeuraMove in brief"><div class="wrap intro-band-inner"><p>Built by a gig driver, for the details that get lost between shifts.</p><span>Shifts <i aria-hidden="true"></i> Mileage <i aria-hidden="true"></i> Expenses</span></div></section>
+    <section class="story section-pad" id="how-it-works" aria-labelledby="story-heading">
+      <div class="wrap">
+        <div class="section-heading story-heading"><p class="kicker">The working day</p><h2 id="story-heading">A better record starts with what actually happened.</h2><p>NeuraMove helps you connect the hours you worked with the earnings and costs you recorded. No spreadsheet to rebuild at the end of the week.</p></div>
+        <div class="story-grid">
+          <article class="story-step"><span class="step-number">01</span><h3>Record the shift.</h3><p>Log your work time and earnings, and label the platform you drove for. You can add a manual entry when a record is missing.</p></article>
+          <article class="story-step"><span class="step-number">02</span><h3>Keep the costs in sight.</h3><p>Track work mileage and expenses as you go, including receipt photos where useful.</p></article>
+          <article class="story-step"><span class="step-number">03</span><h3>Review the whole picture.</h3><p>See trends and estimated hourly figures based on the records you have entered and tracked.</p></article>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FEATURE SHOWCASE -->
-  <section class="py-20 px-4 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto">
-      <!-- Feature 1 -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
-        <div>
-          <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-4">Earnings Intelligence</span>
-          <h2 class="text-4xl font-bold text-white mb-6">Keep work records together</h2>
-          <p class="text-xl text-slate-300 mb-6">Log earnings from different platforms in one place. Supported statements and CSV files can help fill gaps; there is no automatic platform account connection yet.</p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Multi-platform tracking</p><p class="text-slate-400">Log shifts from all your platforms in one place</p></div></li>
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Estimated hourly view</p><p class="text-slate-400">Compare recorded earnings and expenses against logged work time</p></div></li>
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Weekly & monthly trends</p><p class="text-slate-400">Spot patterns and optimize your schedule</p></div></li>
-          </ul>
-        </div>
-        <div>
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/1dff96ac-6133-4d38-8168-a47a81149416.png" alt="Earnings tracking" class="rounded-2xl shadow-2xl border-2 border-slate-800 w-full" />
-        </div>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
-        <div class="order-2 lg:order-1">
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/87b9b0d9-01c3-4d8a-b7f9-b2bbd5bbfc5d.png" alt="Expense tracking" class="rounded-2xl shadow-2xl border-2 border-slate-800 w-full" />
-        </div>
-        <div class="order-1 lg:order-2">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-4">Record Keeping</span>
-          <h2 class="text-4xl font-bold text-white mb-6">Organize records for tax time</h2>
-          <p class="text-xl text-slate-300 mb-6">Track business expenses and mileage in one place. Review tax summaries based on the records you enter and collect.</p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Expense tracking with receipts</p><p class="text-slate-400">Snap photos of receipts, categorize expenses instantly</p></div></li>
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Business mileage records</p><p class="text-slate-400">Keep distance and expense records to review your vehicle's business use</p></div></li>
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Reviewable summaries</p><p class="text-slate-400">Use recorded totals as a starting point; verify tax treatment before filing</p></div></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">Performance Intelligence</span>
-          <h2 class="text-4xl font-bold text-white mb-6">Make data-driven decisions</h2>
-          <p class="text-xl text-slate-300 mb-6">Explore patterns in the information you record. Estimates may be incomplete when shifts, expenses, or imports are missing.</p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Platform comparison</p><p class="text-slate-400">Compare logged shifts by platform when your records are complete</p></div></li>
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Time-of-day patterns</p><p class="text-slate-400">Review recorded work periods before changing your schedule</p></div></li>
-            <li class="flex items-start gap-3"><span class="text-emerald-400 text-xl mt-0.5">✓</span><div><p class="text-white font-medium">Goal tracking</p><p class="text-slate-400">Compare your logged progress with your income targets</p></div></li>
-          </ul>
-        </div>
-        <div>
-          <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/de78f996-fa57-47f0-bf21-be199b3d8029.png" alt="Analytics and insights" class="rounded-2xl shadow-2xl border-2 border-slate-800 w-full" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES GRID -->
-  <section id="features" class="py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">Everything Gig Workers Need</h2>
-        <p class="text-xl text-slate-400">All the tools to run your gig work like a business</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-indigo-500/10 flex items-center justify-center text-2xl mb-4">⚡</div><h3 class="text-lg font-semibold text-white mb-2">Shift Logging</h3><p class="text-slate-400 text-sm">Enter hours, earnings, and platform when you finish work.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-2xl mb-4">📅</div><h3 class="text-lg font-semibold text-white mb-2">Smart Scheduling</h3><p class="text-slate-400 text-sm">Plan your work blocks and visualize your schedule.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-amber-500/10 flex items-center justify-center text-2xl mb-4">🧾</div><h3 class="text-lg font-semibold text-white mb-2">Expense Tracking</h3><p class="text-slate-400 text-sm">Track fuel, maintenance, and recurring bills with receipt photos.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-2xl mb-4">📈</div><h3 class="text-lg font-semibold text-white mb-2">Deep Analytics</h3><p class="text-slate-400 text-sm">Detailed insights on hourly rates, trends, and performance.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-2xl mb-4">🎯</div><h3 class="text-lg font-semibold text-white mb-2">Goal Setting</h3><p class="text-slate-400 text-sm">Set daily, weekly, and monthly targets to stay motivated.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-2xl mb-4">📄</div><h3 class="text-lg font-semibold text-white mb-2">Tax Summaries</h3><p class="text-slate-400 text-sm">Recorded earnings, expenses, and mileage in a summary you can review.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-rose-500/10 flex items-center justify-center text-2xl mb-4">🏆</div><h3 class="text-lg font-semibold text-white mb-2">Progress</h3><p class="text-slate-400 text-sm">Review your own logged activity over time.</p></div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 card-hover"><div class="h-12 w-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-2xl mb-4">🔒</div><h3 class="text-lg font-semibold text-white mb-2">Data Controls</h3><p class="text-slate-400 text-sm">Request help with your data through support while account controls are being improved.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLATFORMS -->
-  <section class="py-16 px-4 bg-slate-900/30">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Log work from multiple platforms</h2>
-      <p class="text-lg text-slate-400 mb-12">These names are examples of platforms you can label in manual records; they do not indicate a live account connection or partnership.</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Uber</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">DoorDash</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Skip The Dishes</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Instacart</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Uber Eats</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Lyft</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Uride</div>
-        <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 font-semibold">Any Platform</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="py-20 px-4 bg-slate-900/50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">Built for Every Type of Gig Worker</h2>
-        <p class="text-xl text-slate-400">For drivers and couriers who want clearer records</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-8 text-center">
-          <div class="text-5xl mb-4">🚗</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Rideshare Drivers</h3>
-          <p class="text-slate-400">Keep a record of work periods, earnings, and mileage across the services you use.</p>
-        </div>
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-8 text-center">
-          <div class="text-5xl mb-4">🍕</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Delivery Drivers</h3>
-          <p class="text-slate-400">Review logged shifts, delivery earnings, expenses, and work patterns.</p>
-        </div>
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-8 text-center">
-          <div class="text-5xl mb-4">🛒</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Multi-App Workers</h3>
-          <p class="text-slate-400">Instacart shoppers and anyone working across multiple gig platforms simultaneously.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 px-4 text-center">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-4">Help shape the beta</h2>
-      <p class="text-slate-400">We are inviting drivers to test the current app and tell us where records or tracking need improvement.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">Ready to take control of your gig income?</h2>
-      <p class="text-xl text-slate-300 mb-10">We are seeking 20 iPhone users who drive gig work to test NeuraMove and share feedback.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTKVXlsVni_qiqCwJmN641WQVE-rnu2V-TO7sWfkDx0zwVoQ/viewform" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-10 py-4 rounded-lg text-lg transition-colors">Join the beta — apply here →</a>
-      </div>
-      <p class="text-sm text-slate-500">No credit card required • Free during beta</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-20 px-4 bg-slate-900/30 border-t border-slate-800">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-        <p class="text-xl text-slate-400">Everything you need to know about NeuraMove</p>
-      </div>
-      <div class="space-y-4">
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-3">Is NeuraMove free?</h3><p class="text-slate-400">The current beta is free. We have not launched paid features.</p></div>
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-3">Does NeuraMove automatically import my earnings?</h3><p class="text-slate-400">No platform account connection is live. You can log shifts and use supported file imports; always review imported records.</p></div>
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-3">How accurate are the tax calculations?</h3><p class="text-slate-400">NeuraMove's tax summary is an estimate based on your recorded income, expenses, and mileage. For self-employed drivers, vehicle expense claims generally use eligible actual costs and the business-use share of total kilometres, not the CRA's per-kilometre employee allowance. Keep receipts and a mileage log, and review your situation with a tax professional before filing.</p></div>
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-3">How can I manage my data?</h3><p class="text-slate-400">The app currently offers an export of shift and expense records. Contact support for a broader data request or deletion while account controls are being completed.</p></div>
-        <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-3">Is there a mobile app?</h3><p class="text-slate-400">An iOS beta is in testing. Android availability is still being worked on.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-12 px-4 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-3">
-        <img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/d8ce52d8-125b-46df-b51d-fe45464a6417.png" alt="NeuraMove" class="h-6 w-6" />
-        <span class="text-slate-400">© 2026 NeuraMove. All rights reserved.</span>
-      </div>
-      <div class="flex gap-6">
-        <a href="about.html" class="text-slate-400 hover:text-white transition-colors">About</a>
-        <a href="founding-operator-program.html" class="text-slate-400 hover:text-white transition-colors">Founding Operators</a>
-        <a href="terms.html" class="text-slate-400 hover:text-white transition-colors">Terms</a>
-        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors">Privacy</a>
-      </div>
-    </div>
-  </footer>
-
+    </section>
+    <section class="feature section-pad" aria-labelledby="feature-heading"><div class="wrap feature-grid">
+      <div class="feature-copy"><p class="kicker">Made for the in-between</p><h2 id="feature-heading">The money you made is only part of the day.</h2><p>A payout alone cannot show the time and vehicle costs behind it. Bring your logged earnings, mileage, and expenses into one view to understand your own work patterns.</p><p class="feature-note">NeuraMove’s insights depend on the records available. There is no live platform account connection in the current beta.</p></div>
+      <figure class="feature-visual"><img src="https://dtvoeevhaseb5.cloudfront.net/uploads/mocha-import/a6d9a7d1-933a-4195-aab1-0671215148cf/de78f996-fa57-47f0-bf21-be199b3d8029.png" alt="Illustrative NeuraMove analytics screen with sample figures" width="420" height="600" loading="lazy"><figcaption>App preview · Sample values shown</figcaption></figure>
+    </div></section>
+    <section class="principle section-pad" aria-labelledby="principle-heading"><div class="wrap principle-grid"><p class="kicker">Why we’re building it</p><div><h2 id="principle-heading">Gig work is flexible. Keeping track of it should feel manageable.</h2><p>NeuraMove began with a driver’s need for clearer records. We’re testing the app with a small group now, listening to what works on the road, and improving the parts that do not.</p><a class="text-link text-link-light" href="about.html">Read about NeuraMove <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="beta section-pad" id="beta" aria-labelledby="beta-heading"><div class="wrap beta-grid">
+      <div><p class="kicker">Join the first group</p><h2 id="beta-heading">Help shape the beta from the driver’s seat.</h2><p>We’re inviting 20 iPhone users who do gig driving to try NeuraMove and tell us where logging, mileage tracking, or reports need work. Drivers from across Canada are welcome to apply.</p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdTKVXlsVni_qiqCwJmN641WQVE-rnu2V-TO7sWfkDx0zwVoQ/viewform">Apply for the beta <span aria-hidden="true">↗</span></a><p class="beta-note">Opens the driver application form · Free during beta</p></div>
+      <aside class="beta-details" aria-label="What to expect"><h3>What to expect</h3><ul><li><span>01</span><p>Apply through the short driver form.</p></li><li><span>02</span><p>If selected, try the current iPhone beta during your usual work.</p></li><li><span>03</span><p>Tell us what is useful and what needs fixing.</p></li></ul></aside>
+    </div></section>
+    <section class="faq section-pad" aria-labelledby="faq-heading"><div class="wrap faq-grid"><div><p class="kicker">Good to know</p><h2 id="faq-heading">A few straightforward answers.</h2></div><div class="faq-list">
+      <details><summary>Is NeuraMove free?</summary><p>The current beta is free. Paid features have not launched.</p></details>
+      <details><summary>Does it connect to my gig accounts?</summary><p>There is no live platform account connection yet. You can log shifts manually and use supported file imports; review imported records for accuracy.</p></details>
+      <details><summary>Can I use it to file my taxes?</summary><p>NeuraMove provides summaries and estimates based on your records. Keep supporting receipts and mileage logs, and verify tax treatment with a qualified professional before filing.</p></details>
+      <details><summary>What about Android?</summary><p>The current beta is on iPhone. Android availability is still being worked on.</p></details>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-top"><p>Keep better track of the work behind your earnings.</p><a class="button button-light" href="https://docs.google.com/forms/d/e/1FAIpQLSdTKVXlsVni_qiqCwJmN641WQVE-rnu2V-TO7sWfkDx0zwVoQ/viewform">Apply for the beta <span aria-hidden="true">↗</span></a></div><div class="wrap footer-bottom"><span>© 2026 NeuraMove</span><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="founding-operator-program.html">Founding Operators</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div></footer>
 </body>
 </html>

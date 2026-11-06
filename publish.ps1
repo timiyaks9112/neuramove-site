@@ -8,7 +8,8 @@ $allowedFiles = @(
   'ios-waitlist.html',
   'privacy.html',
   'terms.html',
-  'style.css'
+  'style.css',
+  'homepage.css'
 )
 
 if (-not (Test-Path -LiteralPath $assetRoot)) {
